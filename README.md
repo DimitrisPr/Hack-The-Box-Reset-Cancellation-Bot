@@ -44,7 +44,7 @@ then add chromedriver.exe in project directory
 
 ## How to use
 
-Change this variables with your credentials and the name of the machine you are trying to root
+Change these variables with your credentials and the name of the machine you are trying to root
 
 ```
 username = 'your_email_here'
