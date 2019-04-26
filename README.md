@@ -36,8 +36,8 @@ Table of Contents
 ### Installation:
 
 ```bash
-https://github.com/DimitrisPr/HTB-Machine-Reset_Cancellation-Bot.git
-cd HTB-Machine-Reset_Cancellation-Bot
+https://github.com/DimitrisPr/HTB-Machine-Reset-Cancellation-Bot.git
+cd HTB-Machine-Reset-Cancellation-Bot
 ```
 
 then add chromedriver.exe in project directory
