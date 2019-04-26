@@ -1,5 +1,5 @@
 
-<img src="https://cdn1.iconfinder.com/data/icons/communications-network-2/109/Bird-DeliveringLetter-512.png" width="150" align="right">
+<img src="https://www.hackthebox.eu/images/favicon.png" width="150" align="right">
 
 # HTB Cancel Machine Resets Bot
 
