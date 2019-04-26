@@ -1,2 +1,2 @@
-# htb_cancel_machine_resets
+# HTB Cancel Machine Resets
 HackTheBox: Automatically detect and cancel machine resets
