@@ -48,7 +48,7 @@ Change these variables with your credentials and the name of the machine you are
 
 ```
 username = 'your_email_here'
-password = 'yur_password_here'
+password = 'your_password_here'
 machine_name = "the_machine_name_here"
 ```
 
