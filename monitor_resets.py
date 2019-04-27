@@ -2,21 +2,30 @@ import string
 import time
 import threading
 from selenium import webdriver
-driver = webdriver.Chrome('./chromedriver') 
+from selenium.webdriver.chrome.options import Options
+options = Options()
+options.add_argument('--headless')
+driver = webdriver.Chrome('./chromedriver', chrome_options=options) 
+
+print("===============================")
+print("Machine Reset Cancellation Bot.")
+print("===============================")
 
 #--------Change these-------#
 
-username = 'your_email_here'
-password = 'yur_password_here'
-machine_name = "the_machine_name_here"
+username = 'your_username'
+password = 'your_password'
+machine_name = "machine_name"
 
 #----------------------------#
 
 login_url = "https://www.hackthebox.eu/login"
 
 def main():
-    driver.get(login_url)
-    login()
+        print("Logging in...")
+        driver.get(login_url)
+        login()
+
 
 def login():
 
@@ -26,34 +35,32 @@ def login():
         login_form = driver.find_element_by_name('password')
         login_form.send_keys(password)
         login_form.submit()
+
         driver.get("https://www.hackthebox.eu/home/shoutbox")
         
-        print("I monitor and cancel resets... You root it!")
+        
+        print("\n########################################################")
+        print("Started monitoring resets for machine: '" + machine_name +"'")
+        print("If a reset occurs it will be automatically cancelled and you will be notified. \nGood Luck!")
+        print("########################################################\n")
 
         time.sleep(5) #make sure page is loaded
 
-        #Every 5 seconds, check if a reset request is issued on machine of interest.
+        #Every 1 second, check if a reset request is issued on machine of interest.
         #if it is, cancel it
 
-        print("I monitor and cancel resets... You root it!")
+       
         while True:
                 detect_resets() 
-                time.sleep(5)
+                time.sleep(1)
 
 def detect_resets():
-        varname = 'issued a reset on ' + machine_name
-        last_messages = [
-                driver.find_elements_by_css_selector("div[class=bs-example] p")[-1].text,
-                driver.find_elements_by_css_selector("div[class=bs-example] p")[-2].text,
-                driver.find_elements_by_css_selector("div[class=bs-example] p")[-3].text
-        ]
+        message = driver.find_elements_by_css_selector("div[class=bs-example] p")[-1].text
         
-        for message in last_messages:
-
-                if "requested a reset on " + machine_name in message and "/cancel" in message:
-                        cancellation_id = extract_id_from_message(message)
-                        print("Detected reset on " + machine_name + ", with id: " + cancellation_id)
-                        cancel_reset(cancellation_id)
+        if "requested a reset on " + machine_name in message and "/cancel" in message:
+                cancellation_id = extract_id_from_message(message)
+                print("Detected reset on " + machine_name + ", with id: " + cancellation_id)
+                cancel_reset(cancellation_id)
 
 def extract_id_from_message(message):
         return message[message.index("/cancel") + len("/cancel"):].replace(" ", "")[0:6]
