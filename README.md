@@ -8,7 +8,7 @@
 
 Script that automatically detects and cancels machine resets, so that you don't have to. 
 Please Star this repo if you enjoy it!
-Let the script running and enjoy hacking!
+Let the script running and enjoy hacking, distraction free!
 
 
 Table of Contents
