@@ -1,5 +1,5 @@
 
-<img src="https://www.hackthebox.eu/images/favicon.png" width="150" align="right">
+<img src="https://www.hackthebox.eu/images/favicon.png" width="50" align="right">
 
 # HTB Cancel Machine Resets Bot
 
@@ -59,5 +59,3 @@ $ python monitor_resets.py
 ```
 
 **Disclaimer**: Please Note that this is a research project: I am by no means responsible for any usage of this tool. 
-
-**Contact me**: I would love to socialize with you. Find me: https://prasakis.com
