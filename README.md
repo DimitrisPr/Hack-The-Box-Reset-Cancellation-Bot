@@ -58,4 +58,4 @@ Execute it:
 $ python monitor_resets.py
 ```
 
-**Disclaimer**: Please Note that this is a research project: I am by no means responsible for any usage of this tool. 
+**Disclaimer**: I am by no means responsible for any usage of this tool. 
