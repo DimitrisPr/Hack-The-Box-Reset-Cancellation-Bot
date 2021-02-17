@@ -7,20 +7,16 @@ options = Options()
 options.add_argument('--headless')
 driver = webdriver.Chrome('./chromedriver', chrome_options=options)
 
-print("===============================")
-print("Machine Reset Cancellation Bot.")
-print("===============================")
+print("""===============================
+         Machine Reset Cancellation Bot
+         ===============================
+      """)
 
-#--------Change these-------#
-
+# Change these
 username = 'your_username'
 password = 'your_password'
 machine_name = "machine_name"
-
-#----------------------------#
-
 login_url = "https://www.hackthebox.eu/login"
-
 
 def main():
     print("Logging in...")
@@ -29,7 +25,6 @@ def main():
 
 
 def login():
-
     # login & redirect to shoutbox
     login_form = driver.find_element_by_name('email')
     login_form.send_keys(username)
@@ -44,14 +39,11 @@ def login():
     print("If a reset occurs it will be automatically cancelled and you will be notified. \nGood Luck!")
     print("########################################################\n")
 
-    time.sleep(5)  # make sure page is loaded
-
-    # Every 1 second, check if a reset request is issued on machine of interest.
-    # if it is, cancel it
-
+    # Ensure that the page is loaded - To be changed with ImplicitWait()
+    time.sleep(5)  
     while True:
         detect_resets()
-        time.sleep(1)
+        time.sleep(1) # To be changed with ImplicitWait()
 
 
 def detect_resets():
@@ -70,7 +62,6 @@ def extract_id_from_message(message):
 
 
 def cancel_reset(cancellation_id):
-
     print("Cancelling reset...")
     chat_input = driver.find_element_by_class_name('emojionearea-editor')
     chat_input.send_keys("/cancel " + cancellation_id)
@@ -78,5 +69,5 @@ def cancel_reset(cancellation_id):
         "div[class=panel-footer] button")[0].click()
     print("Reset Succesfully Canceled!")
 
-
-main()
+if __name__ = "__main__":
+    main()
