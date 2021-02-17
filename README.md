@@ -1,7 +1,7 @@
 
 <img src="https://www.hackthebox.eu/images/favicon.png" width="50" align="right">
 
-# HTB Cancel Machine Resets Bot
+# HTB automation to cancel machine reset requests
 
 [![built with Selenium](https://img.shields.io/badge/built%20with-Selenium-yellow.svg)](https://github.com/SeleniumHQ/selenium)
 [![built with Python3](https://img.shields.io/badge/built%20with-Python3-red.svg)](https://www.python.org/)
