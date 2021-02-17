@@ -3,20 +3,23 @@ import time
 import threading
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
-options = Options()
-options.add_argument('--headless')
-driver = webdriver.Chrome('./chromedriver', chrome_options=options)
+
 
 print("""===============================
          Machine Reset Cancellation Bot
          ===============================
       """)
 
+
+options = Options()
+options.add_argument('--headless')
+driver = webdriver.Chrome('./chromedriver', chrome_options=options)
+login_url = "https://www.hackthebox.eu/login"
+
 # Change these
 username = 'your_username'
 password = 'your_password'
 machine_name = "machine_name"
-login_url = "https://www.hackthebox.eu/login"
 
 def main():
     print("Logging in...")
