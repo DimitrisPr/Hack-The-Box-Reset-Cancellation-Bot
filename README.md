@@ -7,8 +7,9 @@
 [![built with Python3](https://img.shields.io/badge/built%20with-Python3-red.svg)](https://www.python.org/)
 
 Script that automatically detects and cancels machine resets, so that you don't have to. 
-Please Star this repo if you enjoy it!
-Let the script running and enjoy hacking, distraction free!
+Please star this repo if you find it useful.
+
+Let the script running and enjoy hacking, distraction free.
 
 
 Table of Contents
